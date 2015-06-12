@@ -102,7 +102,7 @@ abstract class AbstractRequest implements RequestInterface
      */
     protected function stringifyParameters()
     {
-        f (array_key_exists('PBX_HMAC', $this->parameters)) {
+        if (array_key_exists('PBX_HMAC', $this->parameters)) {
             unset($this->parameters['PBX_HMAC']);
         }
 
